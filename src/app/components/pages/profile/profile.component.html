@@ -1,0 +1,20 @@
+<app-loading *ngIf="isUsernameLoading || isStatisticsLoading"></app-loading>
+
+<div class="container" *ngIf="!isUsernameLoading && !isStatisticsLoading">
+  <p class="greeting">Witaj {{ username }}</p>
+  <p class="information" *ngIf="userStatistics.numberOfQuizzesTaken">
+    Wypełniłeś już {{ userStatistics.numberOfQuizzesTaken }}
+    {{ getTheCorrectSpellingOfQuizWord() }}
+  </p>
+  <p class="information" *ngIf="userStatistics.numberOfQuizzesTaken">
+    Procent poprawnych odpowiedzi wynosi:
+    {{ getPercentOfCorrectAnswers() }}%
+  </p>
+  <p class="information" *ngIf="!userStatistics.numberOfQuizzesTaken">
+    Tutaj wyświetlone zostaną statystyki, gdy wykonasz minimum jeden quiz
+  </p>
+  <button class="button" (click)="resetPassword()">
+    Zmień hasło do konta
+  </button>
+  <button class="button" (click)="sendEmail()">Skontaktuj się z pomocą techniczną</button>
+</div>

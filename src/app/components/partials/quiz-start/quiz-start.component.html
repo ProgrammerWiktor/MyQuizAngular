@@ -1,0 +1,34 @@
+<div class="container" *ngIf="!isConfirmDelete">
+  <p class="title">Wybrany Quiz</p>
+  <div class="informations">
+    <p class="information">
+      <span class="bold">Tytuł: </span>{{ quiz.title }}
+    </p>
+    <p class="information">
+      <span class="bold">Opis: </span>{{ quiz.description }}
+    </p>
+    <p class="information">
+      <span class="bold">Autor: </span>{{ username }}
+    </p>
+    <p class="information" *ngIf="isAuthor">
+       Jesteś autorem tego Quizu
+    </p>
+  </div>
+  <div class="buttons">
+    <button class="button" routerLink="/quiz-list">
+      Wróć
+    </button>
+    <button class="button" (click)="openConfirmationOfDeletion()" *ngIf="isAuthor">
+      Usuń
+    </button>
+    <button class="button" (click)="startQuiz()">
+      Rozpocznij
+    </button>
+  </div>
+</div>
+
+<app-confirm-delete-quiz
+  [quizTitle]="quiz.title"
+  (choice)="checkIfDeleteQuiz($event)"
+  *ngIf="isConfirmDelete"
+></app-confirm-delete-quiz>

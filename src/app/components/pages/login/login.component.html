@@ -1,0 +1,56 @@
+<section class="container">
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2 class="title">Zaloguj się</h2>
+
+    <label for="email-input" class="label">Email</label>
+    <input
+      type="email"
+      class="input"
+      id="email-input"
+      formControlName="email"
+    />
+    <div class="alert-box">
+      <div
+        class="alert"
+        *ngIf="
+          loginForm.controls.email.invalid && loginForm.controls.email.touched
+        "
+      >
+        Podaj prawidłowy email
+      </div>
+    </div>
+
+    <label for="password-input" class="label">Hasło</label>
+    <input
+      type="password"
+      class="input"
+      id="password-input"
+      formControlName="password"
+    />
+    <div class="alert-box">
+      <div
+        class="alert"
+        *ngIf="
+          loginForm.controls.password.invalid &&
+          loginForm.controls.password.touched
+        "
+      >
+        Hasło musi mieć minimum 8 znaków
+      </div>
+    </div>
+
+    <a class="reset-password" routerLink="/reset-password">
+      Nie pamiętasz hasła?
+    </a>
+
+    <app-spinner-button
+      class="button"
+      text="Zaloguj się"
+      [isProgress]="isLogging"
+    ></app-spinner-button>
+
+    <p class="register-text">
+      Lub <a class="register-link" routerLink="/register">Zarejestruj się</a>
+    </p>
+  </form>
+</section>

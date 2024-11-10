@@ -1,0 +1,17 @@
+<section class="container">
+  <p class="title">Filtruj:</p>
+  <button
+    class="button"
+    [ngClass]="{ 'chosen': filter === 'All' }"
+    (click)="setFilter('All')"
+  >
+    Wszystkie Quizy
+  </button>
+  <button
+    class="button"
+    [ngClass]="{ 'chosen': filter === 'Users' }"
+    (click)="setFilter('Users')"
+  >
+    Twoje Quizy
+  </button>
+</section>

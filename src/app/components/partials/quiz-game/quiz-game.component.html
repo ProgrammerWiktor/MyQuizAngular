@@ -1,0 +1,81 @@
+<div class="container" *ngIf="!showResults">
+  <p class="question">{{ questions[currentQuestion].text }}</p>
+  <div class="answers">
+    <ul class="answers-list">
+      <li
+        *ngFor="let answer of questions[currentQuestion].answers; let i = index"
+      >
+        <div
+          class="answer"
+          [ngClass]="{ checked: getCheckedClass(i) }"
+          (click)="selectAnswer(i)"
+        >
+          {{ answer.text }}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="footer">
+    <button type="button" class="button" (click)="previousQestion()">
+      Poprzednie
+    </button>
+    <p class="number">
+      Pytanie {{ currentQuestion + 1 }} z {{ questions.length }}
+    </p>
+    <button
+      type="button"
+      class="button"
+      (click)="nextQuestion()"
+      *ngIf="currentQuestion !== questions.length - 1"
+    >
+      Następne
+    </button>
+    <button
+      type="button"
+      class="button"
+      (click)="finishQuiz()"
+      *ngIf="currentQuestion === questions.length - 1"
+    >
+      Zakończ
+    </button>
+  </div>
+</div>
+
+<div class="container" *ngIf="showResults">
+  <p class="question">{{ questions[currentQuestion].text }}</p>
+  <div class="answers">
+    <ul class="answers-list">
+      <li
+        *ngFor="let answer of questions[currentQuestion].answers; let i = index"
+      >
+        <div class="answer" [ngClass]="getAnswerClass(i, answer)">
+          {{ answer.text }}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="footer">
+    <button type="button" class="button" (click)="previousQestion()">
+      Poprzednie
+    </button>
+    <p class="number">
+      Pytanie {{ currentQuestion + 1 }} z {{ questions.length }}
+    </p>
+    <button
+      type="button"
+      class="button"
+      (click)="nextQuestion()"
+      *ngIf="currentQuestion !== questions.length - 1"
+    >
+      Następne
+    </button>
+    <button
+      type="button"
+      class="button"
+      (click)="goToSummary()"
+      *ngIf="currentQuestion === questions.length - 1"
+    >
+      Zakończ
+    </button>
+  </div>
+</div>

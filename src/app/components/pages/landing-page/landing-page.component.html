@@ -1,0 +1,36 @@
+<section class="container">
+  <div class="hero">
+    <div class="left">
+      <div class="wrapper">
+        <h1 class="title">Witaj w MyQuiz</h1>
+        <p class="description">
+          Czyli w serwisie, w którym możesz poszerzać swoją wiedzę poprzez
+          wypełnianie quizów.
+        </p>
+        <div class="login-container" *ngIf="!isLoggedIn">
+          <p class="login-request">Aby zacząć musisz być zalogowany</p>
+          <div class="button-wrapper">
+            <app-link-button link="login" text="Zaloguj się" />
+            <app-link-button link="register" text="Zarejestruj się" />
+          </div>
+        </div>
+        <div class="login-container" *ngIf="isLoggedIn">
+          <p class="login-request">Jesteś już zalogowany</p>
+          <div class="button-wrapper">
+            <app-link-button link="quiz-list" text="Przejdź do listy quizów" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <img
+        src="assets/ui/quiz-header.svg"
+        alt="quiz hero icon"
+        class="hero-image"
+      />
+    </div>
+  </div>
+  <div class="footer">
+    <a class="about" routerLink="/about">O aplikacji</a>
+  </div>
+</section>

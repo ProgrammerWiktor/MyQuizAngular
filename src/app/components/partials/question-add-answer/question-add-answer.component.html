@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="question-wrapper">
+    <label [for]="'question-' + numberOfQuestion" class="label">Pytanie</label>
+    <input
+      type="text"
+      class="input"
+      [name]="'question-' + numberOfQuestion"
+      [id]="'question-' + numberOfQuestion"
+      [(ngModel)]="text"
+    />
+  </div>
+
+  <div *ngFor="let answer of answers; let i = index" class="answer-container">
+    <div class="question-wrapper">
+      <label [for]="'answer-input-' + numberOfQuestion + i" class="label">
+        Odpowiedź {{ i + 1 }}</label
+      >
+      <input
+        type="text"
+        class="input"
+        [id]="'answer-input-' + numberOfQuestion + i"
+        [name]="'answer-input-' + numberOfQuestion + i"
+        [(ngModel)]="answer.text"
+        [ngClass]="answer.isCorrect ? 'correct-answer' : 'incorrect-answer'"
+      />
+    </div>
+    <div class="checkmark-wrapper">
+      <button type="button" class="checkmark" (click)="setAnswerCorrectness(i)">
+        {{ answer.isCorrect ? "&#x2713;" : "&#x2717;" }}
+      </button>
+      <button type="button" class="checkmark" (click)="removeAnswer(i)">
+        &#8722;
+      </button>
+    </div>
+  </div>
+
+  <div class="add-question-container">
+    <button type="button" class="checkmark double" (click)="addAnswer()">
+      +
+    </button>
+  </div>
+</div>

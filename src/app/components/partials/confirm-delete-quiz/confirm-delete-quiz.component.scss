@@ -1,0 +1,62 @@
+@import './../../../../variables.scss';
+
+.container {
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.top {
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid gray;
+}
+
+.question {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.quiz-title {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0.5rem;
+}
+
+
+.button {
+  background-color: $primaryColor;
+  border: 1px solid gray;
+  width: 9rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $primaryColorHover;
+  }
+}
+
+@media (max-width: 500px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .button {
+    width: 90%;
+  }
+}

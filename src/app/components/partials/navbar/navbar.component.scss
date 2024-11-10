@@ -1,0 +1,97 @@
+@import "./../../../../variables.scss";
+
+.container {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  background-color: $primaryColor;
+  z-index: 10;
+}
+
+.bar {
+  width: 95%;
+  height: $navbarHeight;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-name {
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+  border-radius: 10px;
+  color: $textColor;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $primaryColorHover;
+  }
+}
+
+.items {
+  display: flex;
+
+  li {
+    list-style-type: none;
+    margin-left: 1rem;
+
+    a {
+        padding: 0.5rem;
+        font-size: 1.1rem;
+        background-color: transparent;
+        color: $textColor;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: 0.3s;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $primaryColorHover;
+        }
+    }
+  }
+}
+
+.toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $primaryColorHover;
+    cursor: pointer;
+  }
+}
+
+.mobile-items-container {
+  width: 100%;
+}
+
+.mobile-items {
+  li {
+    list-style-type: none;
+    display: flex;
+
+    a {
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+      transition: 0.3s;
+      color: $textColor;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $primaryColorHover;
+        cursor: pointer;
+      }
+    }
+  }
+}

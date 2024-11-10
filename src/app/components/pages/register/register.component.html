@@ -1,0 +1,91 @@
+<section class="container">
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h2 class="title">Zarejestruj się</h2>
+
+    <label for="nick-input" class="label">Nazwa użytkownika</label>
+    <input
+      type="text"
+      class="input"
+      id="nick-input"
+      formControlName="username"
+    />
+    <div class="alert-box">
+      <div
+        class="alert"
+        *ngIf="
+          registerForm.controls.username.invalid &&
+          registerForm.controls.username.touched
+        "
+      >
+        Nazwa użytkownika musi mieć minimum 3 znaki
+      </div>
+    </div>
+
+    <label for="email-input" class="label">Email</label>
+    <input
+      type="email"
+      class="input"
+      id="email-input"
+      formControlName="email"
+    />
+    <div class="alert-box">
+      <div
+        class="alert"
+        *ngIf="
+          registerForm.controls.email.invalid &&
+          registerForm.controls.email.touched
+        "
+      >
+        Podaj prawidłowy Email
+      </div>
+    </div>
+
+    <label for="password-input" class="label">Hasło</label>
+    <input
+      type="password"
+      class="input"
+      id="password-input"
+      formControlName="password"
+    />
+    <div class="alert-box">
+      <div
+        class="alert"
+        *ngIf="
+          registerForm.controls.password.invalid &&
+          registerForm.controls.password.touched
+        "
+      >
+        Hasło musi mieć minimum 8 znaków
+      </div>
+    </div>
+
+    <label for="password-input" class="label">Powtórz hasło</label>
+    <input
+      type="password"
+      class="input"
+      id="password-repeat-input"
+      formControlName="confirmPassword"
+    />
+    <div class="alert-box">
+      <div
+        class="alert"
+        *ngIf="
+          registerForm.errors?.['passwordsMismatch'] &&
+          registerForm.controls.confirmPassword.touched
+        "
+      >
+        Podane hasła nie są takie same
+      </div>
+    </div>
+
+    <app-spinner-button
+      class="button"
+      text="Zarejestruj się"
+      [isProgress]="isPending"
+    ></app-spinner-button>
+
+    <p class="register-text">
+      Lub <a class="register-link" routerLink="/login">Zaloguj się</a>
+    </p>
+  </form>
+</section>

@@ -1,0 +1,20 @@
+@import "./../../../../variables.scss";
+
+.button {
+  min-width: 10.2rem;
+  height: 3.1rem;
+  padding: 0.8rem 1.3rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid gray;
+  background-color: $primaryColor;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $primaryColorHover;
+  }
+}

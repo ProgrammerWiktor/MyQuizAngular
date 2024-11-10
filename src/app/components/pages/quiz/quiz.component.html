@@ -1,0 +1,20 @@
+<app-loading *ngIf="isLoading || isLoadingUsername"></app-loading>
+
+<section class="container" *ngIf="!isLoading">
+  <app-quiz-start
+    *ngIf="stage === 'start' && quiz"
+    (changeStage)="onChangeStage($event)"
+    (isLoading)="onIsLoading()"
+    [quiz]="quiz"
+    [ngClass]="{'hidden': isLoadingUsername}"
+  ></app-quiz-start>
+  <app-quiz-game
+    *ngIf="stage === 'quiz' && quiz"
+    (changeStage)="onChangeStage($event)"
+    [questions]="quiz.questions || []"
+  ></app-quiz-game>
+  <app-quiz-end
+    *ngIf="stage === 'end'"
+    (changeStage)="onChangeStage($event)"
+  ></app-quiz-end>
+</section>

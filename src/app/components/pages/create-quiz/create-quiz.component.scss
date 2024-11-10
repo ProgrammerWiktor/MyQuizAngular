@@ -1,0 +1,84 @@
+@import "./../../../../variables.scss";
+
+.container {
+  width: 90%;
+  max-width: 70rem;
+  margin: 1rem auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.label {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.input {
+  outline: none;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.input-textarea {
+  margin-bottom: 2rem;
+  resize: vertical;
+  min-height: 3rem;
+  max-height: 5rem;
+  outline: 0;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-family: "roboto";
+}
+
+.button {
+  width: 9rem;
+  height: 3.4rem;
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: $primaryColor;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $primaryColorHover;
+  }
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: right;
+  gap: 1rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.line {
+  border: none;
+  height: 1px;
+  background-color: gray;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .buttons-wrapper {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,42 @@
+@import './../../../../variables.scss';
+
+.container {
+  max-width: 48rem;
+  margin: 1rem auto;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.button {
+  width: 10.2rem;
+  background-color: white;
+  padding: 0.5rem 0;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $primaryColor;
+    cursor: pointer;
+  }
+}
+
+.chosen {
+  background-color: $primaryColorHover !important;
+}
+
+@media (max-width: 550px) {
+  .container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

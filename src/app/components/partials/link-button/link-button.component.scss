@@ -1,0 +1,15 @@
+@import './../../../../variables.scss';
+
+.link {
+    background-color: $primaryColor;
+    text-decoration: none;
+    color: $textColor;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $primaryColorHover;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,52 @@
+<section class="container">
+  <h1 class="title">Dodaj Quiz</h1>
+
+  <form class="form">
+    <label for="quiz-title" class="label">Tytuł</label>
+    <input
+      type="text"
+      class="input"
+      id="quiz-title"
+      name="quizTitle"
+      [(ngModel)]="quiz.title"
+    />
+
+    <label for="quiz-description" class="label">Opis</label>
+    <textarea
+      id="quiz-description"
+      class="input-textarea"
+      name="quizDescription"
+      [(ngModel)]="quiz.description"
+    ></textarea>
+
+    <hr class="line" />
+
+    <app-question-add-answer
+      *ngFor="let question of quiz.questions; let i = index"
+      [numberOfQuestion]="i"
+      (setQuestion)="setQuestions(i, $event)"
+    ></app-question-add-answer>
+
+    <div class="buttons-wrapper">
+      <button
+        class="button"
+        *ngIf="quiz.questions?.length"
+        (click)="submitQuiz()"
+      >
+        <span *ngIf="!isLoading">Zakończ</span>
+        <mat-spinner *ngIf="isLoading" diameter="30"></mat-spinner>
+      </button>
+      <button class="button" type="button" (click)="addQuestion()">
+        Dodaj pytanie
+      </button>
+      <button
+        class="button"
+        type="button"
+        (click)="deleteQuestion()"
+        *ngIf="quiz.questions?.length"
+      >
+        Usuń pytanie
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,4 @@
+<button type="submit" class="button">
+  <span *ngIf="!isProgress">{{ text }}</span>
+  <mat-spinner *ngIf="isProgress" diameter="30"></mat-spinner>
+</button>

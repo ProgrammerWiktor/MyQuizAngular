@@ -1,0 +1,13 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+<section class="container" *ngIf="!isLoading">
+  <app-quiz-filter></app-quiz-filter>
+  <ul class="quizzes-list">
+    <li *ngFor="let quiz of quizzes">
+      <app-quiz-item [quiz]="quiz"></app-quiz-item>
+    </li>
+  </ul>
+  <p class="not-found" *ngIf="quizzes.length === 0">
+    Brak quizów do wyświetlenia
+  </p>
+</section>

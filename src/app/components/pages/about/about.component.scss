@@ -1,0 +1,41 @@
+@import './../../../../variables.scss';
+
+.container {
+  width: 90%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  align-items: center;
+}
+
+.app-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.author {
+  font-size: 1.3rem;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.contact {
+  color: $textColor;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.legal {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.info {
+  max-width: 50rem;
+  text-align: center;
+  color: gray;
+}

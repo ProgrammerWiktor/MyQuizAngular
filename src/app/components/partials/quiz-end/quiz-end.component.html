@@ -1,0 +1,20 @@
+<div class="container">
+  <p class="title">Ukończyłeś Quiz</p>
+  <div class="results">
+    <p class="result">
+      Twój wynik to {{ numberOfPoints }} poprawnych odpowiedzi na
+      {{ numberOfQuestions }} pytań
+    </p>
+    <p class="percent">
+      {{ ((numberOfPoints / numberOfQuestions) * 100).toFixed(2) }}%
+    </p>
+    <div class="buttons">
+      <button class="button" (click)="onShowResults()">
+        Zobacz swoje odpowiedzi
+      </button>
+      <button class="button" routerLink="/quiz-list">
+        Wróć do listy quizów
+      </button>
+    </div>
+  </div>
+</div>

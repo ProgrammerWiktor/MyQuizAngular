@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="top">
+    <p class="question">Czy na pewno chcesz usunąć ten Quiz?</p>
+    <p class="quiz-title">{{ quizTitle }}</p>
+  </div>
+  <div class="buttons">
+    <button class="button" (click)="emitChoice(false)">Nie</button>
+    <button class="button" (click)="emitChoice(true)">
+      <span *ngIf="!isPending">Tak</span>
+      <mat-spinner diameter="25" *ngIf="isPending"></mat-spinner>
+    </button>
+  </div>
+</div>

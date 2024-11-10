@@ -1,0 +1,11 @@
+@import './../../../../variables.scss';
+
+.container {
+  width: 90%;
+  max-width: 70rem;
+  margin: 1rem auto;
+}
+
+.hidden {
+  display: none;
+}

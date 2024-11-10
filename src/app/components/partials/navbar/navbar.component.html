@@ -1,0 +1,52 @@
+<nav class="container">
+  <div class="bar">
+    <a class="app-name" routerLink="/">
+      MyQuiz
+    </a>
+    <button class="toggle" *ngIf="isMobile" (click)="toggleMobileItems()">
+      {{ areMobileItemsShown ? "&#10005;" : "&#9776;" }}
+    </button>
+    <div class="items-container" *ngIf="!isMobile">
+      <ul class="items" *ngIf="isUserAuthenticated">
+        <li>
+          <a routerLink="/quiz-list">Lista quizów</a>
+        </li>
+        <li>
+          <a routerLink="/create-quiz">Dodaj quiz</a>
+        </li>
+        <li>
+          <a routerLink="/profile">Profil</a>
+        </li>
+        <li>
+          <a (click)="logout()">Wyloguj się</a>
+        </li>
+      </ul>
+      <ul class="items" *ngIf="!isUserAuthenticated">
+        <li>
+          <a routerLink="/login">Zaloguj się</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="mobile-items-container" *ngIf="areMobileItemsShown && isMobile">
+    <ul class="mobile-items" *ngIf="isUserAuthenticated">
+      <li>
+        <a routerLink="/quiz-list">Lista quizów</a>
+      </li>
+      <li>
+        <a routerLink="/create-quiz">Dodaj quiz</a>
+      </li>
+      <li>
+        <a routerLink="/profile">Profil</a>
+      </li>
+      <li>
+        <a (click)="logout()">Wyloguj się</a>
+      </li>
+    </ul>
+    <ul class="mobile-items" *ngIf="!isUserAuthenticated">
+      <li>
+        <a routerLink="/login">Zaloguj się</a>
+      </li>
+    </ul>
+  </div>
+</nav>

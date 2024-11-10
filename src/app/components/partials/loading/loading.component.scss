@@ -1,0 +1,9 @@
+@import "./../../../../variables.scss";
+
+.loading {
+  width: 100%;
+  height: calc(100vh - $navbarHeight - 1px - 1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
